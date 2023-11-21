@@ -1,31 +1,35 @@
 package AD010;
+import java.util.*;
 
-import java.util.Scanner;
-
-public class Ex10 {
-    public static Scanner sc = new Scanner(System.in);
+class Ex10 {
     public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
 
-        System.out.println("Informe um texto:");
-        String texto = sc.nextLine();
+        System.out.println("Escreva uma mensagem");
+        String msg = ler.nextLine();
 
-        if (ehPalindromo(texto)) {
-            System.out.println("O texto é um palíndromo.");
+        System.out.println(palindromo(msg));
+    
+
+    }
+
+    public static String palindromo(String msg) {
+        String resultado = "";
+        String situacao = "";
+
+        for (int i = msg.length() - 1; i >= 0; i--) {
+            char letra = msg.charAt(i);
+            resultado = resultado + letra;            
+        }
+
+        if(msg.equalsIgnoreCase(resultado)) {
+            situacao = "Palindromo";
         } else {
-            System.out.println("O texto não é um palíndromo.");
+            situacao = "Nao e palindromo";
         }
+        
+        return situacao;
+
     }
 
-    public static boolean ehPalindromo(String texto) {
-        String textoFormatado = texto.replaceAll("\\s", "").toLowerCase();
-        int comprimento = textoFormatado.length();
-
-        for (int i = 0; i < comprimento / 2; i++) {
-            if (textoFormatado.charAt(i) != textoFormatado.charAt(comprimento - 1 - i)) {
-                return false;
-            }
-        }
-
-        return true;
-    }
 }
