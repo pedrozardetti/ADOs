@@ -1,0 +1,8 @@
+    int i;
+    for (i = 1; i <= 10000000000000000; i++) {
+        System.out.print(n*i);
+    }
+    print(i);
+    // esse é um exemplo de tabuada, onde ele calcula entre o número 1 e  o número 10. 
+    // o i++ representa que ele está calculando de 1 em 1 número. Se eu quisesse que fosse de 2 em 2, seria i = i + 2;
+    
