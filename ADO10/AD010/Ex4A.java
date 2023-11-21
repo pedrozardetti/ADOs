@@ -1,5 +1,4 @@
 package AD010;
-
 import java.util.Scanner;
 
 public class Ex4A {
@@ -11,10 +10,6 @@ public class Ex4A {
         System.out.println("Informe um número de fim");
         int fim = sc.nextInt();
 
-        if (inicio % 2 != 0) {
-            inicio++;
-        }
-
         System.out.println(
             "A soma dos números pares de " + inicio + " até " + fim + " é " + somarParesAte(inicio, fim));
     
@@ -22,7 +17,8 @@ public class Ex4A {
 
     public static int somarParesAte(int inicio, int fim) {
         int soma = 0;
-        for (int numeroAtual = inicio; numeroAtual <= fim; numeroAtual += 2) {
+        for (int numeroAtual = inicio; numeroAtual <= fim; numeroAtual++) {
+            if(numeroAtual % 2 == 0)
             soma += numeroAtual;
         }
 
